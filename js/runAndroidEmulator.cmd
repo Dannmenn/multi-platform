@@ -1,0 +1,1 @@
+C:\Users\Daniel\AppData\Local\Android\Sdk\tools\emulator.exe -avd Nexus_6_API_28

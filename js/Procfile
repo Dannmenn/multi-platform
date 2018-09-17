@@ -1,0 +1,4 @@
+ionic: npm run ionic:serve
+ionic_android: npm run ionic:android:build
+electron_serve: npm run electron:serve
+electron_app: node electron-wait-ionic.js

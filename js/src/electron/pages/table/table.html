@@ -1,0 +1,19 @@
+<ion-content>
+    <div class="table-view">
+        <input
+                type='text'
+                style='padding:8px;margin:15px auto;width:30%;'
+                placeholder='Type to filter the name column...'
+                (keyup)='updateFilter($event)'
+        />
+        <ngx-datatable
+                #table
+                [columns]="columns"
+                [scrollbarH]="true"
+                [headerHeight]="50"
+                [rowHeight]="'auto'"
+                [limit]="100"
+                [rows]='rows'>
+        </ngx-datatable>
+    </div>
+</ion-content>

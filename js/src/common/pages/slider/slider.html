@@ -1,0 +1,7 @@
+<ion-content no-bounce>
+    <ion-slides pager="true" paginationType="fraction">
+        <ion-slide *ngFor="let item of slides">
+            <item-object [item]="item"></item-object>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

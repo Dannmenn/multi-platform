@@ -1,0 +1,1 @@
+Comparative analysis of solutions for multi-platform applications

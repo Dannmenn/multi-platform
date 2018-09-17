@@ -1,0 +1,108 @@
+{
+  "name": "js",
+  "version": "0.0.1",
+  "author": "daniel.mendroch@gmail.com",
+  "private": true,
+  "main": "electron/electron.js",
+  "scripts": {
+    "start": "nf start",
+    "electron:dist": "electron .",
+    "electron:build:app": "npm run electron:build && \"node_modules/.bin/build\"",
+    "electron:build": "ionic-app-scripts build --wwwDir www_electron -p 8101 --livereload-port 53709 --dev-logger-port 53806 --appEntryPoint src/electron/app/main.ts --appNgModulePath src/electron/app/app.module.ts",
+    "electron:serve": "ionic-app-scripts serve --wwwDir www_electron -p 8101 --livereload-port 53709 --dev-logger-port 53806 --appEntryPoint src/electron/app/main.ts --appNgModulePath src/electron/app/app.module.ts",
+    "ionic:android:build": "ionic-app-scripts build --appEntryPoint src/android/app/main.ts --appNgModulePath src/android/app/app.module.ts --target cordova --platform android",
+    "ionic:android:emulate": "npm run ionic:android:build && ionic cordova emulate android --build false",
+    "ionic:build": "ionic-app-scripts build --wwwDir www_ionic --appEntryPoint src/ionic/app/main.ts --appNgModulePath src/ionic/app/app.module.ts",
+    "ionic:serve": "ionic-app-scripts serve --wwwDir www_ionic --appEntryPoint src/ionic/app/main.ts --appNgModulePath src/ionic/app/app.module.ts",
+    "test": "karma start ./test-config/karma.conf.js",
+    "test-ci": "karma start ./test-config/karma.conf.js --single-run",
+    "test-coverage": "karma start ./test-config/karma.conf.js --coverage",
+    "e2e": "npm run e2e-update && npm run e2e-test",
+    "e2e-test": "protractor ./test-config/protractor.conf.js",
+    "e2e-update": "webdriver-manager update --standalone false --gecko false"
+  },
+  "dependencies": {
+    "@angular/animations": "5.2.11",
+    "@angular/common": "5.2.11",
+    "@angular/compiler": "5.2.11",
+    "@angular/compiler-cli": "5.2.11",
+    "@angular/core": "5.2.11",
+    "@angular/forms": "5.2.11",
+    "@angular/http": "5.2.11",
+    "@angular/platform-browser": "5.2.11",
+    "@angular/platform-browser-dynamic": "5.2.11",
+    "@ionic-native/camera": "4.3.3",
+    "@ionic-native/core": "~4.12.0",
+    "@ionic-native/splash-screen": "~4.12.0",
+    "@ionic-native/status-bar": "~4.12.0",
+    "@ngx-translate/core": "8.0.0",
+    "@ngx-translate/http-loader": "^2.0.0",
+    "@swimlane/ngx-datatable": "^11.3.2",
+    "cordova-android": "7.0.0",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.1.2",
+    "cordova-plugin-ionic-webview": "^2.1.3",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "emulator": "0.1.0",
+    "ionic-angular": "3.9.2",
+    "ionicons": "3.0.0",
+    "rxjs": "5.5.11",
+    "sw-toolbox": "3.6.0",
+    "zone.js": "0.8.26"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.4.8",
+    "@ionic/app-scripts": "3.2.0",
+    "@types/jasmine": "^2.5.41",
+    "@types/node": "^8.0.45",
+    "angular2-template-loader": "^0.6.2",
+    "electron": "^2.0.8",
+    "electron-builder": "^20.28.3",
+    "foreman": "^3.0.1",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "jasmine": "^2.5.3",
+    "jasmine-spec-reporter": "^4.1.0",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage-istanbul-reporter": "^1.3.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.3",
+    "protractor": "^5.1.1",
+    "ts-loader": "^3.0.3",
+    "ts-node": "^3.0.2",
+    "typescript": "2.4.2"
+  },
+  "description": "Cross platform project based on Ionic and Electron",
+  "build": {
+    "appId": "pl.mendroch.cross-platform.js",
+    "electronVersion": "2.0.8",
+    "asar": false,
+    "files": [
+      "www_electron/**/*",
+      "electron/*"
+    ]
+  },
+  "config": {
+    "ionic_copy": "./config/copy.config.js",
+    "ionic_sass": "./config/sass.config.js",
+    "ionic_bundler": "webpack",
+    "ionic_webpack": "./config/webpack.config.js"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}
