@@ -1,0 +1,12 @@
+rootProject.name = 'kotlin'
+
+include 'server'
+include 'frontend:android:app'
+include 'frontend:desktop'
+include 'frontend:web'
+include 'common'
+include 'common:common-js'
+include 'common:common-jvm'
+include 'common:client'
+include 'common:client:client-js'
+include 'common:client:client-jvm'

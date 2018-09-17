@@ -1,0 +1,114 @@
+html, body {
+    height: 100%;
+}
+
+#root, .main {
+    height: 100%;
+}
+
+.content, .table-object-view {
+    height: calc(100% - 56px);
+}
+
+.list-view {
+    list-style: none;
+    margin: 0;
+    padding: 0 10px;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.list-view li {
+    padding: 5px;
+}
+
+.list-view li div {
+    padding: 10px;
+}
+
+.list-view li div:hover {
+    background-color: #f1f1f1;
+}
+
+.list-view li, .list-view li p {
+    margin: 0;
+}
+
+.header-p {
+    font-weight: bold;
+}
+
+.list-view a {
+    color: black;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.list-view a:-webkit-any-link {
+    text-decoration: none;
+}
+
+.download-view p {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.list-object {
+    margin: 30px;
+}
+
+.toolbar-icon a {
+    color: white;
+    margin-right: 10px;
+}
+
+.toolbar-title {
+    margin: auto 0;
+}
+
+.table-object, .table-object div {
+    padding: 30px;
+}
+
+.table-object-view .link {
+    color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: calc(100% - 56px);
+}
+
+.table-object-view .paging {
+    position: absolute;
+    bottom: 60px;
+    text-align: center;
+    width: 100%;
+}
+
+.link span, .table-object {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+}
+
+.link span {
+    font-size: 30px;
+    z-index: 10;
+}
+
+.link:hover {
+    background-color: #f1f1f1;
+}
+
+.table-object-view .previous-link {
+    left: 0;
+}
+
+.table-object-view .next-link {
+    right: 0;
+}
+
+.bottom-navigation div {
+    background-color: #f1f1f1;
+}

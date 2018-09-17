@@ -1,0 +1,53 @@
+group 'pl.mendroch.crossplatform'
+version '0.1-base'
+
+apply plugin: 'org.jetbrains.kotlin.frontend'
+apply plugin: 'kotlin2js'
+
+kotlinFrontend {
+    downloadNodeJsVersion = '10.9.0'
+
+    npm {
+        dependency("webpack-cli", "v2.0.12")
+        dependency("react", "16.5.0")
+        dependency("react-dom", "16.5.0")
+        dependency("react-router-dom", "4.3.1")
+        dependency("@material-ui/core", "3.0.3")
+    }
+
+    sourceMaps = true
+
+    webpackBundle {
+        bundleName = "main"
+        contentPath = file('src/main/web')
+        proxyUrl = "http://localhost:8080"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':common:client:client-js')
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+    compile "org.jetbrains:kotlin-react:16.5.0-pre.54-kotlin-1.2.70"
+    compile "org.jetbrains:kotlin-react-dom:16.5.0-pre.54-kotlin-1.2.70"
+    compile "org.jetbrains:kotlin-react-router-dom:4.3.1-pre.54-kotlin-1.2.70"
+    testCompile "org.jetbrains.kotlin:kotlin-test-js"
+}
+
+compileKotlin2Js {
+    kotlinOptions.metaInfo = true
+    kotlinOptions.outputFile = "$project.buildDir.path/js/${project.name}.js"
+    kotlinOptions.sourceMap = true
+    kotlinOptions.moduleKind = 'commonjs'
+    kotlinOptions.main = "call"
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}

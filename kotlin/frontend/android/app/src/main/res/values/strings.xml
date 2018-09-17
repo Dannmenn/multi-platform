@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cross Platform Android client</string>
+    <string name="title_activity_main_view">Cross platform Android app</string>
+    <string name="title_list">List</string>
+    <string name="title_table">Table</string>
+    <string name="title_download">Download files</string>
+</resources>

@@ -1,0 +1,16 @@
+ext {
+//  general
+    kotlin_version = '1.2.70'
+    serialization_version = '0.6.2'
+    nodeVersion = '10.9.0'
+
+//  server
+    ktor_version = '0.9.4'
+
+// Common
+    coroutines_version = '0.26.0'
+
+// Desktop
+    tornadofx_version = '1.7.17'
+    controlsfx_version = '8.40.14'
+}
